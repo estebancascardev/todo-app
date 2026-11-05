@@ -1,0 +1,57 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../src/output.css" rel="stylesheet">
+        <title>Registro</title>
+    </head>
+    <body class="bg-zinc-500">
+        <nav id="navbar" class="fixed top-0 right-0 left-0 bg-slate-900 h-16">
+        </nav>
+
+        <div id="notification" class="fixed top-20 left-0 right-0">
+
+        </div>
+
+        <div class="pt-16 h-screen flex max-w-7xl mx-auto justify-center items-center px-4">
+            <div class="hidden lg:flex w-2/4 justify-center items-center">
+                <img class="w-3/4 " src="/images/signup.svg" alt="Imagen para Registro">
+            </div>
+            <form id="form" class="flex flex-col gap-4 bg-zinc-200 p-4 rounded-lg text-md shadow-lg lg:w-2/4">
+                <div class="flex flex-col gap-2">
+                    <label for="name-input" class="font-bold text-zinc-900">Nombre <span class="text-red-500">*</span></label>
+                    <input type="text" id="name-input" name="name-input" autocomplete="off" placeholder="Nombre" class="rounded-lg p-2 bg-zinc-100 focus:outline-indigo-700">
+                    <p class="text-xs text-zinc-800">Debe tener entre 6 y 24 caracteres e incluir de forma obligatoria al menos una letra minúscula y al menos un número.</p>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="email-input" class="font-bold text-zinc-900">Correo <span class="text-red-500">*</span></label>
+                    <input type="email" id="email-input" name="email-input" autocomplete="off" placeholder="ejemplo@correo.com" class="rounded-lg p-2 bg-zinc-100 focus:outline-indigo-700">
+                    <p class="text-xs text-zinc-800">El correo debe tener un formato válido.</p>
+                </div>
+
+                
+                <div class="flex flex-col gap-2">
+                    <label for="password-input" class="font-bold text-zinc-900">Contraseña <span class="text-red-500">*</span></label>
+                    <input type="password" id="password-input" name="password-input" autocomplete="off" class="rounded-lg p-2 bg-zinc-100 focus:outline-indigo-700">
+                    <p class="text-xs text-zinc-800">Debe tener entre 6 y 16 caracteres e incluir de forma obligatoria al menos una letra minúscula y al menos un número.</p>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="match-input" class="font-bold text-zinc-900">Confirmar Contraseña <span class="text-red-500">*</span></label>
+                    <input type="password" id="match-input" name="match-input" autocomplete="off" class="rounded-lg p-2 bg-zinc-100 focus:outline-indigo-700">
+                    <p class="text-xs text-zinc-800">Debe coincidir con la contraseña original.</p>
+                </div>
+
+                <button disabled id="form-btn" class="bg-indigo-700 py-2 px-4 rounded-lg font-bold text-white transition ease-in-out hover:bg-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed">Registrar</button>
+            </form>
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="../components/nav.js"></script>
+        <script type="module" src="./index.js"></script>
+        <script type="module" src="../components/notification.js"></script>
+    </body>
+    </html>

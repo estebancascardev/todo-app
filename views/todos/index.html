@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title>
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CDN de Axios para las peticiones al backend -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body class="bg-[#0b0f19] pt-16 text-slate-100 min-h-screen flex flex-col justify-between select-none font-sans">
+    
+    <nav id="navbar" class="fixed top-0 right-0 left-0 bg-slate-900 h-16">
+    </nav>
+
+    <!-- Contenedor Principal Adaptable -->
+    <main class="max-w-xl mx-auto w-full p-4 my-auto flex flex-col items-center">
+        
+        <!-- Título principal responsivo -->
+        <h1 class="text-2xl sm:text-3xl font-bold tracking-widest text-slate-200 mb-6 text-center">TODO APP</h1>
+
+        <!-- Tarjeta contenedora responsiva -->
+        <div class="bg-[#111827] border border-slate-800 rounded-2xl p-4 sm:p-6 w-full shadow-2xl">
+            
+            <!-- Formulario flexible -->
+            <form id="form" class="relative mb-6">
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <input 
+                        type="text" 
+                        placeholder="Create some task..." 
+                        class="flex-1 bg-[#1f2937] border border-slate-700/80 rounded-xl px-3 sm:px-4 py-3 text-slate-200 placeholder-slate-400 focus:outline-none focus:border-indigo-500 transition text-sm"
+                        autocomplete="off"
+                    >
+                    <button type="submit" class="add-btn bg-[#7c3aed] hover:bg-[#6d28d9] text-white w-11 h-11 rounded-full flex items-center justify-center font-bold text-xl shadow-md transition shrink-0 cursor-pointer">
+                        +
+                    </button>
+                </div>
+                <!-- Mensaje de error -->
+                <p class="invalid-check hidden text-rose-500 text-xs mt-1.5 pl-1">La tarea no puede estar vacía.</p>
+            </form>
+
+            <!-- Lista de Tareas con scroll adaptable -->
+            <div class="bg-[#0f172a] border border-slate-800/80 rounded-xl overflow-hidden mb-6 max-h-64 sm:max-h-72 overflow-y-auto">
+                <ul class="divide-y divide-slate-800/80">
+                    <!-- Las tareas se inyectan dinámicamente aquí -->
+                </ul>
+            </div>
+
+            <!-- Contadores inferiores responsivos (se adaptan en pantallas pequeñas) -->
+            <div class="flex flex-col sm:flex-row justify-between gap-2 text-xs font-semibold">
+                <div class="bg-[#7c3aed] text-white px-3 sm:px-4 py-2 rounded-lg flex justify-between sm:justify-start items-center gap-2 shadow">
+                    <span>Total:</span>
+                    <span class="total-count">0</span>
+                </div>
+                <div class="bg-[#10b981] text-white px-3 sm:px-4 py-2 rounded-lg flex justify-between sm:justify-start items-center gap-2 shadow">
+                    <span>Completed:</span>
+                    <span class="completed-count">0</span>
+                </div>
+                <div class="bg-[#f43f5e] text-white px-3 sm:px-4 py-2 rounded-lg flex justify-between sm:justify-start items-center gap-2 shadow">
+                    <span>Incompleted:</span>
+                    <span class="incompleted-count">0</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-4 text-center text-slate-600 text-xs">
+        App de Tareas
+    </footer>
+
+    <!-- Script principal -->
+    <script src="./index.js" type="module"></script>
+    <script src="../components/nav.js"></script>
+</body>
+</html>
